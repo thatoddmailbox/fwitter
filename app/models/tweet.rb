@@ -1,4 +1,4 @@
-class Fweet
+class Tweet
   
   def initialize
   end
