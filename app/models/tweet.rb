@@ -1,5 +1,4 @@
 class Tweet
-<<<<<<< HEAD
   ALL_TWEETS = [] 
   attr_accessor :username, :content
   def initialize(username, content)
@@ -14,9 +13,3 @@ class Tweet
   
 end
 
-
-
-=======
-
-end
->>>>>>> 7d689702194234ed81b5d8b1dce681fd8dbc8bf8
