@@ -6,8 +6,9 @@ class ApplicationController < Sinatra::Base
   set :public, "public"
   
   get "/" do
-    @tweet_1 = Tweet.new("Richard Stamina", "Rold Gold makes me feel like cold mold")
+    @tweet_4 = Tweet.new("Richard Stamina", "Rold Gold makes me feel like cold mold")
     erb :tweets
   end
+
   
 end
