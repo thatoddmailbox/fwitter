@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <h1>Fwitter</h1>
+    <h2>Your tweet</h2>
+    <h3><%= h @tweet.username %> says:</h3>
+    <p><%= @tweet.content %><% #this is already HTML-filtered in application_controller.rb %></p>
+  </body>
+  
+</html>

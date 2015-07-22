@@ -1,1 +1,19 @@
-style.css
+body {
+  font-family: Arial;
+}
+input, textarea {
+  border: 1px solid black;
+  box-sizing: content-box;
+  font-family: Arial;
+  font-size: 1.3em;
+  width: 300px;
+  height: 25px;
+  padding: 5px;
+}
+#tweet {
+  height: 150px;
+  vertical-align: top;
+}
+#submit {
+  padding: 5px;
+}
