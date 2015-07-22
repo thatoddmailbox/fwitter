@@ -1,3 +1,4 @@
 .*
 !/.gitignore
 .bundle/
+db/database.db
