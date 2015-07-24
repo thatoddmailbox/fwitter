@@ -1,17 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Fwitter</title>
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-</head>
-<body>
-  <form action="/submit_tweet" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <br />
-    <textarea id="tweet" name="tweet" placeholder="Tweet" maxlength="140"></textarea>
-    <br />
-    <br />
-    <input type="submit" id="submit" value="Submit">
-  </form>
-</body>
-</html>
+<div class="row">
+  <div class="col-md-3 tweetForm">
+    <%= erb :title %>
+    <div>
+      <form action="/submit_tweet" method="POST">
+        <textarea id="tweet" name="tweet" placeholder="Tweet" maxlength="140"></textarea>
+        <br />
+        <br />
+        <input type="submit" id="submit" value="Submit" class="btn btn-primary">
+      </form>
+      <%= erb :infoBlock %>
+    </div>
+  </div>
+  <div class="col-md-7 tweetList">
+    <% if not session[:logged_in] %>
+    <div class="landingIntro">
+      <h1>marketing text</h1>
+      <h3>Bla bla bla</h3>
+      <p class="lead">encouraging text</p>
+      <a href="/signup" class="btn btn-primary btn-lg">Get started &raquo;</a>
+      <a href="/login" class="btn btn-default btn-lg">Log in</a>
+    </div>
+    <% end %>
+    <div>
+      <%= erb :tweetlist, locals: {tweets: Tweet.order(created_at: :desc)} %>
+    </div>
+  </div>
+</div>

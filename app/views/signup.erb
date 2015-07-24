@@ -1,0 +1,55 @@
+<div class="userBody">
+  <h1>Sign up</h1>
+  <p class="lead">You're joining the.... bla bla marketing text.</p>
+  <div class="userForm">
+    <form action="/signup" method="POST">
+      <!--<div class="input-group">
+        <div class="input-group-addon">@</div>-->
+        <input type="text" name="username" class="form-control" placeholder="Username" />
+      <!--</div>-->
+      <input type="email" name="email" class="form-control" placeholder="Email" />
+      <input type="password" name="password" class="form-control" placeholder="Password" />
+      <input type="password" name="passwordConf" class="form-control" placeholder="Password (again!)" />
+      <div class="passwordStrength">Type an a password.</div>
+      <div class="progress">
+        <div class="progress-bar passwordStrengthBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4" style="width: 0%;">
+        </div>
+      </div>
+      <br />      
+      <input type="submit" class="btn btn-primary" placeholder="Sign up" />
+    </form>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/zxcvbn/1.0/zxcvbn-async.js"></script>
+<script src="https://cdn.jsdelivr.net/zxcvbn/1.0/zxcvbn.js"></script>
+<script>
+  $(document).ready(function() {
+    $("input[name=password]").keyup(function() {
+      var result = zxcvbn($(this).val());
+      var passwordStrengthStr = "";
+      if (result.score == 0)
+      {
+        passwordStrengthStr = "Useless";
+      }
+      else if (result.score == 1)
+      {
+        passwordStrengthStr = "Weak";
+      }
+      else if (result.score == 2)
+      {
+        passwordStrengthStr = "OK";
+      }
+      else if (result.score == 3)
+      {
+        passwordStrengthStr = "Good";
+      }
+      else if (result.score == 4)
+      {
+        passwordStrengthStr = "Very good";
+      }
+      $(".passwordStrength").text("Password rating: " + passwordStrengthStr);
+      $(".passwordStrengthBar").attr("aria-valuenow", result.score);
+      $(".passwordStrengthBar").css("width", (result.score / 4)*100 + "%");
+    })
+  });
+</script>

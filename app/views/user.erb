@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-3 tweetForm">
+    <%= erb :title %>
+    <div>
+      <h2>@<%= h params[:user] %></h2>
+      <h4><%= h params[:bio] %></h4>
+      <%= erb :infoBlock %>
+    </div>
+  </div>
+  <div class="col-md-7 tweetList">
+    <div>
+      <%= erb :tweetlist, locals: {tweets: User.find_by_username(params[:user]).tweets} %>
+    </div>
+  </div>
+</div>

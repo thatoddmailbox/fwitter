@@ -1,11 +1,49 @@
-body {
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: Arial;
+  overflow: hidden;
+  height:100%;
+}
+.navForm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  width: 16.6%; 
+}
+.tweetForm {
+  border-right: solid 2px black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  overflow: hidden; 
+  height:100%;
+  padding: 10px 0 0 0;
+  text-align: center;
+}
+.tweetForm > div {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tweetList {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+  width: 75%;
+  height: 100%;
+  padding: 0;
 }
 input, textarea {
   border: 1px solid black;
   box-sizing: content-box;
   font-family: Arial;
   font-size: 1.3em;
+  max-width: 300px;
   width: 300px;
   height: 25px;
   padding: 5px;
@@ -16,4 +54,54 @@ input, textarea {
 }
 #submit {
   padding: 5px;
+}
+.tweetUsername {
+  font-size: 1.3em;
+}
+.tweetContent {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+.timeago {
+  color: gray;
+  font-size: 1.1em;
+  padding-top: 0;
+}
+.fwitterTitle {
+  font-size: 1.5em;
+  text-align: center;
+  border-bottom: solid 2px black;
+}
+.landingIntro {
+  border-bottom: solid 2px black;
+  padding-bottom: 15px;
+}
+.landingIntro h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+.landingIntro h3 {
+  font-size: 2.5em;
+}
+.landingIntro .lead {
+  font-size: 1.8em;
+}
+.tweetList > div {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.userBody {
+  text-align: center;
+}
+.userForm input, .userForm .input-group {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2em;
+  margin: 0 auto;
+  width: 300px;
+  height: 50px;
+}
+.progress {
+  margin: 0 auto;
+  width: 300px;
 }

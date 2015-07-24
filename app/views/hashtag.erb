@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-3 tweetForm">
+    <%= erb :title %>
+    <div>
+      <h2>#<%= h params[:hashtag] %></h2>
+      <%= erb :infoBlock %>
+    </div>
+  </div>
+  <div class="col-md-7 tweetList">
+    <div>
+      <%= erb :tweetlist, locals: {tweets: Tweet.where(["content LIKE ?", "%##{params[:hashtag]}%"])} %>
+    </div>
+  </div>
+</div>

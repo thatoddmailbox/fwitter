@@ -1,0 +1,8 @@
+<% tweets.each do |tweet| %>
+<h3 class="tweetUsername"><%= h tweet.user.username %> says:</h3>
+  <p class="tweetContent">
+    <%= parse_tweet tweet.content %><% # this is already HTML-filtered in application_controller.rb %>
+  </p>
+  <abbr class="timeago" title="<%= tweet.created_at.to_s.gsub(" UTC", "Z").gsub(" ", "T") %>"><%= tweet.created_at %></abbr>
+  <br /><br />
+<% end %>

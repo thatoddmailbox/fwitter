@@ -1,0 +1,17 @@
+<div class="fwitterTitle">
+  <a href="/">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-square-o fa-stack-2x"></i>
+      <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+    Fwitter
+  </a>
+</div>
+<div class="fwitterTitle">
+  <% if not session[:logged_in] %>
+  <a href="/signup" class="btn btn-primary">Sign up</a>
+  <a href="/login" class="btn btn-primary">Log in</a>
+  <% else %>
+  Hi, <strong><%= h User.find(session[:user_id]).username %></strong>! <a href="/logout" class="btn btn-default">Log out</a>
+  <% end %>
+</div>
